@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CodSoftAlarm" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">#7996ba</item>
+        <item name="android:navigationBarColor">#7996ba</item>
+
+        <item name="android:statusBarColor">#7996ba</item>
+    </style>
+
+    <style name="Theme.CodSoftAlarm" parent="Base.Theme.CodSoftAlarm" />
+    <style name="TimeTheme" parent="ThemeOverlay.Material3.Dialog">
+        <item name="colorAccent">#7996ba</item>
+    </style>
+    <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+    </style>
+</resources>

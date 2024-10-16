@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="end"
+    android:gravity="end"
+    android:orientation="vertical"
+    app:layout_anchorGravity="end"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="157dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/row"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:cardCornerRadius="7dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Time"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Time"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Label"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+
+                android:checked="true"
+                android:foregroundGravity="center_horizontal"
+                android:gravity="end"
+
+                app:trackDecoration="@drawable/bg_track"
+                app:trackDecorationTint="#DC767676"
+                app:trackDecorationTintMode="multiply"
+                app:trackTint="#FEFEFE"
+                app:trackTintMode="src_atop" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+
+
