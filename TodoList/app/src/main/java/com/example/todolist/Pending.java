@@ -1,7 +1,10 @@
 package com.example.todolist;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +19,7 @@ public class Pending extends Fragment {
     private RecyclerView rv;
     private RecyclerTaskAdapter rvadap;
     private ArrayList<TaskModel> taskList;
+
 
 
     public Pending() {
@@ -52,8 +56,28 @@ public class Pending extends Fragment {
             Toast.makeText(getContext(),"Get arguments is null",Toast.LENGTH_SHORT).show();
         //taskList=db.getAllTasks();
         if (taskList != null) {
-            rvadap = new RecyclerTaskAdapter(taskList,1);
+            rvadap = new RecyclerTaskAdapter(taskList,1,getContext());
             rv.setAdapter(rvadap);
+            ItemTouchHelper.SimpleCallback scb= new ItemTouchHelper.SimpleCallback( 0,ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT) {
+                @Override
+                public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                    return false;
+                }
+
+                @Override
+                public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                    int positon =viewHolder.getAdapterPosition();
+                    if(direction==ItemTouchHelper.LEFT){
+                        rvadap.removeItem(positon);
+                    }
+                    if(direction==ItemTouchHelper.RIGHT){
+                        rvadap.changeIsDone(positon);
+                    }
+
+                }
+            };
+            ItemTouchHelper ith=new ItemTouchHelper(scb);
+            ith.attachToRecyclerView(rv);
         }
         else
             Toast.makeText(getContext(),"hello",Toast.LENGTH_LONG).show();

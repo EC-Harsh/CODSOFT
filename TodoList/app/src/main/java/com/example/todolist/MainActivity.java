@@ -51,13 +51,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         arrayList=new ArrayList<TaskModel>();
-        arrayList.add(new TaskModel("Test 1","Desc for test", true,new Date().getTime(),1));
-        arrayList.add(new TaskModel("Test 2","Desc for test", true,new Date().getTime(),8));
-        arrayList.add(new TaskModel("Test 3","Desc for test", true,new Date().getTime(),6));
-        arrayList.add(new TaskModel("Test 3","Desc for test", true,new Date().getTime(),7));
-        arrayList.add(new TaskModel("Test 4","Desc for test", true,new Date().getTime(),4));
-        arrayList.add(new TaskModel("Test 5","Desc for test", false,new Date().getTime(),2));
-        arrayList.add(new TaskModel("Test 6","Desc for test", false,new Date().getTime(),3));
+
+        // Test cases removed after testing
+//        arrayList.add(new TaskModel("Test 1","Desc for test", true,new Date().getTime(),1));
+//        arrayList.add(new TaskModel("Test 2","Desc for test", true,new Date().getTime(),8));
+//        arrayList.add(new TaskModel("Test 3","Desc for test", true,new Date().getTime(),6));
+//        arrayList.add(new TaskModel("Test 3","Desc for test", true,new Date().getTime(),7));
+//        arrayList.add(new TaskModel("Test 4","Desc for test", true,new Date().getTime(),4));
+//        arrayList.add(new TaskModel("Test 5","Desc for test", false,new Date().getTime(),2));
+//        arrayList.add(new TaskModel("Test 6","Desc for test", false,new Date().getTime(),3));
 
         bnView=findViewById(R.id.bottomNavigationView);
         PrefsHelper ph =new PrefsHelper(this);

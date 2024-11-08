@@ -63,7 +63,7 @@ public class All extends Fragment {
         ph=new PrefsHelper(getContext());
         arrTasks=ph.getTaskList();
         if (arrTasks != null) {
-            rvadap = new RecyclerTaskAdapter(arrTasks,4);
+            rvadap = new RecyclerTaskAdapter(arrTasks,4,getContext());
             rv.setAdapter(rvadap);
         }
         // Inflate the layout for this fragment

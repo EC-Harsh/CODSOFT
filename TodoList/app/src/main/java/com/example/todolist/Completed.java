@@ -68,7 +68,7 @@ public class Completed extends Fragment {
             if(arrTasks==null)
                 Toast.makeText(getContext(),"Task List is null",Toast.LENGTH_SHORT).show();
             else{
-             rvadap = new RecyclerTaskAdapter(arrTasks,2);
+             rvadap = new RecyclerTaskAdapter(arrTasks,2,getContext());
             rv.setAdapter(rvadap);
 
             }
